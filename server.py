@@ -216,10 +216,10 @@ def show_locations():
     pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
 
     if os.environ["LOCATION_FEATURE_ENABLED"] == "True":
-            pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
-            return render_template("locations.html", pickups=pickups)
+        pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
+        return render_template("locations.html", pickups=pickups)
     else:
-return render_template("coming-soon.html")
+        return render_template("coming-soon.html")
 
 
 @app.route('/cart')
