@@ -34,7 +34,7 @@ class FlaskTests(unittest.TestCase):
                                         "email": "jane@gmail.com",
                                         "password": "123"},
                                   follow_redirects=True)
-        self.assertIn(b"Registration successful!", result.data)
+        self.assertIn(b"Registration successful!!", result.data)
 
         result = self.client.get('/register')
         self.assertIn(b'register_img', result.data)
